@@ -1,0 +1,112 @@
+﻿<Page x:Class="Tetris2.OknoGry"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tetris2"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="820"
+      Title="OknoGry" Loaded="PageLoaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                    <GradientStop Color="DarkCyan" Offset="0.2"/>
+                    <GradientStop Color="Magenta" Offset="0.85"/>
+                    <GradientStop Color="DarkMagenta" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Label HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Verdana" FontSize="40" Foreground="DarkMagenta">TETRIS</Label>
+            <!--<Button Click="Powrot" Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Powrót do menu</Button>-->
+            <Button Click="ZapiszIWyjdz" Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Zapisz i wyjdź</Button>
+            <Button Click="Wyjscie" Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Wyjscie</Button>
+            <Label Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Poziom:</Label>
+            <Label HorizontalAlignment="Center" FontSize="40" Foreground="Azure" Name="predkoscLabel">3</Label>
+            <Label Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Instrukcja:</Label>
+            <Border BorderBrush="Bisque" Background="Aquamarine" BorderThickness="3" Padding="2" Width="200">
+                <StackPanel>
+                    <TextBlock>Poruszanie w menu: myszka</TextBlock>
+                    <TextBlock>Przesuwanie klocków: strzałki</TextBlock>
+                    <TextBlock>Rotacja klocka: strzałka w górę</TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock>Gra polega na układaniu lini ze</TextBlock>
+                    <TextBlock>spadających klocków. Przegrana</TextBlock>
+                    <TextBlock>następuje w momencie</TextBlock>
+                    <TextBlock>spietrzenia się klocków do</TextBlock>
+                    <TextBlock>górnej krawedzi mapy. Ułożenie</TextBlock>
+                    <TextBlock>linii na całej szerokości pola gry</TextBlock>
+                    <TextBlock>spowoduje zniknięcie rzędu</TextBlock>
+                    <TextBlock>oraz otrzymanie punktów.</TextBlock>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                    <GradientStop Color="DarkCyan" Offset="0.2"/>
+                    <GradientStop Color="Magenta" Offset="0.85"/>
+                    <GradientStop Color="DarkMagenta" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+        <Grid Grid.Column="1" Name="GridGry">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Canvas Grid.Column="2">
+            <Label Margin="5" FontSize="17" FontWeight="Bold" FontFamily="Verdana">Następny Klocek:</Label>
+            <Border Canvas.Top="50" Canvas.Left="90" BorderThickness="4" BorderBrush="DarkMagenta" Background="Transparent" Height="80" Width="80"></Border>
+            <Canvas Canvas.Top="50" Canvas.Left="90" Height="80" Width="80" Name="NastepnyKlocek"></Canvas>
+            <Label Margin="5" FontSize="27" FontWeight="Bold" FontFamily="Verdana" Canvas.Top="150" Canvas.Left="20" Name="Score">0</Label> 
+        </Canvas>
+    </Grid>
+</Page>

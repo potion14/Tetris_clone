@@ -1,0 +1,34 @@
+﻿<Page x:Class="Tetris2.Instrukcja"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tetris2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Instrukcja">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" Height="320">
+            <Label HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Verdana" FontSize="40" Foreground="DarkCyan">TETRIS</Label>
+            <Border BorderBrush="Bisque" Background="Aquamarine" BorderThickness="3" Padding="2">
+                <StackPanel>
+                    <TextBlock>Poruszanie w menu: myszka</TextBlock>
+                    <TextBlock>Przesuwanie klocków: strzałki</TextBlock>
+                    <TextBlock>Rotacja klocka: strzałka w górę</TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock>Gra polega na układaniu lini ze</TextBlock>
+                    <TextBlock>spadających klocków. Przegrana</TextBlock>
+                    <TextBlock>następuje w momencie</TextBlock>
+                    <TextBlock>spietrzenia się klocków do</TextBlock>
+                    <TextBlock>górnej krawedzi mapy. Ułożenie</TextBlock>
+                    <TextBlock>linii na całej szerokości pola gry</TextBlock>
+                    <TextBlock>spowoduje zniknięcie rzędu</TextBlock>
+                    <TextBlock>oraz otrzymanie punktów.</TextBlock>
+                </StackPanel>
+            </Border>
+          <Button Click="Powrot" Margin="5" FontSize="17">Powrót</Button>
+            <Label HorizontalAlignment="Center" Foreground="Magenta">cBy Piotr Tomczyk</Label>
+        </StackPanel>
+    </Grid>
+</Page>
